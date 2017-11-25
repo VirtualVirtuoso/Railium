@@ -29,6 +29,20 @@ module.exports = function(app) {
       test.save();
     }
 
+    callback = function(err, data) {
+      if(err) {
+        console.log(err);
+        res.status(500).end();
+      }
+      else {
+        res.send(data);
+      }
+    }
+
+    JourneySchema.find({
+      'customer_number': 14 }
+    , callback);
+
   }
 
 }
