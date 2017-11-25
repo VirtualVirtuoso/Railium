@@ -23,4 +23,4 @@ var journeyModelSchema = new Schema({
 
 
 //Export function to create "SomeModel" model class
-module.exports = mongoose.model('JourneySchema', journeyModelSchema );
+module.exports = mongoose.model('Journey', journeyModelSchema );
