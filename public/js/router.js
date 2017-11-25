@@ -4,8 +4,18 @@ function routeProvider($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         title: 'Railium',
-        templateUrl: 'views/view.html',
-        controller: 'AppController'
+        templateUrl: 'views/main.html',
+        controller: 'MainController'
+      })
+      .when('/journey', {
+        title: 'Railium',
+        templateUrl: 'views/train.html',
+        controller: 'MainController'
+      })
+      .when('/station', {
+        title: 'Railium',
+        templateUrl: 'views/journey.html',
+        controller: 'MainController'
       });
 
     // Otherwise
