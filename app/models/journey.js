@@ -8,8 +8,8 @@ var Schema = mongoose.Schema;
 var stopModelSchema = new Schema({
     departure_time: {type: Date, default: Date.now},
     // content: String,
-    station: Schema.Types.ObjectId,
-
+    // station: Schema.Types.ObjectId,
+    code: 'String',
 });
 
 var journeyModelSchema = new Schema({
