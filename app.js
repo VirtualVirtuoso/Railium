@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/my_database');
+mongoose.connect('mongodb://localhost/my_database', { useMongoClient: true });
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function() {
   console.log("Connection to DB open!")
@@ -18,7 +18,7 @@ require('./app/routes')(app);
 const port = process.env.PORT || 8080;
 app.listen(port);
 
-console.log('Go to localhost:' + port);
+console.log('App is running on localhost:' + port);
 
 // Export app
 exports = module.exports = app;
