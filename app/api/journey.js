@@ -17,9 +17,14 @@ module.exports = function(app) {
     res.send(JSON.stringify(response));
   });
 
-  // Return a specific journey at customer_number 14
-  app.get('/api/journeys/14', function(req, res) {
-    Journeys.find({}, {+customer_number: 14}).toArray(function(err, journeys) {
+  // Return a specific journey
+  app.get('/api/journeys/:journey_number', function(req, res) {
+    var regexNum = new RegExp("(\d)*");
+    if (! regexNum.test(journey_number)){
+      console.log("Error");
+      res.status(500).end();
+    }
+    Journeys.find({}, {_customer_number: journey_number}).toArray(function(err, journeys) {
       if (err) {
         console.log(err);
         res.status(500).end();
