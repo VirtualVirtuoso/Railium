@@ -18,24 +18,22 @@ module.exports = function(app) {
   });
 
   // Return a specific journey
-  app.get('/api/journeys/:journey_number', function(req, res) {
+  app.get('/api/journeys/:customer_number', function(req, res) {
     var regexNum = new RegExp("(\d)*");
-    if (! regexNum.test(journey_number)){
+    if (! regexNum.test(customer_number)){
       console.log("Error");
       res.status(500).end();
     }
-    Journeys.find({}, {_customer_number: journey_number}).toArray(function(err, journeys) {
+    Journeys.find({}, {_customer_number: customer_number}).toArray(function(err, journeys) {
       if (err) {
         console.log(err);
         res.status(500).end();
       }
       else {
-        res.send(journeys)
+        res.send(journeys);
       }
     });
     // console.log(req)
-
-    res.send(JSON.stringify(response));
   });
 
 
