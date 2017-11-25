@@ -1,6 +1,7 @@
 module.exports = function(app) {
   // include api files here
-  // require('./api/')
+  require('./api/journey.js')(app);
+  require('./api/station.js')(app);
 
   app.get('/init', function (req, res) {
     var StationSchema = require('../models/station')
