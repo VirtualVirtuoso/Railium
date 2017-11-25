@@ -6,7 +6,7 @@
 }
 
 .londontrain {
-    background-image: url('img/londontrain.jpg');
+    background-image: url('../img/londontrain.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
     min-width: 100%;
@@ -14,14 +14,14 @@
 }
 
 .trainhandles {
-    background-image: url('img/trainhandles.jpg');
+    background-image: url('../img/trainhandles.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
     min-width: 100%;
     /*min-height: 32rem;*/
 }
 .trainrain {
-    background-image: url('img/trainrain.jpg');
+    background-image: url('../img/trainrain.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
     min-width: 100%;
