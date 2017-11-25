@@ -11,4 +11,4 @@ var StationModelSchema = new Schema({
 });
 
 //Export function to create "SomeModel" model class
-module.exports = mongoose.model('StationSchema', StationModelSchema );
+module.exports = mongoose.model('Station', StationModelSchema );
