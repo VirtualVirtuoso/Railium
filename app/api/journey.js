@@ -17,6 +17,23 @@ module.exports = function(app) {
     res.send(JSON.stringify(response));
   });
 
+  // Return a specific journey at customer_number 14
+  app.get('/api/journeys/14', function(req, res) {
+    Journeys.find({}, {+customer_number: 14}).toArray(function(err, journeys) {
+      if (err) {
+        console.log(err);
+        res.status(500).end();
+      }
+      else {
+        res.send(journeys)
+      }
+    });
+    // console.log(req)
+
+    res.send(JSON.stringify(response));
+  });
+
+
   app.post('/api/journey', function(req, res) {
 
   });
