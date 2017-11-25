@@ -13,8 +13,8 @@ module.exports = function(app) {
       }
     });
     // console.log(req)
-
-    res.send(JSON.stringify(response));
+    //
+    // res.send(JSON.stringify(response));
   });
 
   // Return a specific journey
