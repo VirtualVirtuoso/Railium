@@ -1,0 +1,43 @@
+
+.container.ralium {
+    margin: 0px;
+    padding: 0px;
+    min-width: 100%;
+}
+
+.londontrain {
+    background-image: url('img/londontrain.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-width: 100%;
+    /*min-height: 32rem;*/
+}
+
+.trainhandles {
+    background-image: url('img/trainhandles.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-width: 100%;
+    /*min-height: 32rem;*/
+}
+.trainrain {
+    background-image: url('img/trainrain.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-width: 100%;
+    /*min-height: 32rem;*/
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+
+a.massive-button {
+    line-height: 16rem;
+    margin-bottom: 0px;
+    width: 100%;
+    min-height: 16rem;
+    font-size: 48px;
+}
