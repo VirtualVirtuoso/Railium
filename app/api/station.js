@@ -23,7 +23,7 @@ module.exports = function(app) {
 
   });
 
-  app.get('/api/stations/arrival/:departurestation', function(req, res) {
+  app.get('/api/station/arrival/:departurestation', function(req, res) {
 
     Journeys.find(
         {'stops':{"$elemMatch":{'code':req.params['departurestation']}}}
