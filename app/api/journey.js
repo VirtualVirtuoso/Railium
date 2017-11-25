@@ -9,7 +9,7 @@ module.exports = function(app) {
         res.status(500).end();
       }
       else {
-        res.send(journeys)
+        res.send(journeys);
       }
     });
     // console.log(req)
@@ -20,11 +20,11 @@ module.exports = function(app) {
   // Return a specific journey
   app.get('/api/journeys/:customer_number', function(req, res) {
     var regexNum = new RegExp("(\d)*");
-    if (! regexNum.test(customer_number)){
+    if (! regexNum.test(req.params["customer_number"])){
       console.log("Error");
       res.status(500).end();
     }
-    Journeys.find({}, {_customer_number: customer_number}).toArray(function(err, journeys) {
+    Journeys.find({'customer_number': req.params["customer_number"]}, function(err, journeys) {
       if (err) {
         console.log(err);
         res.status(500).end();
