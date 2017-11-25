@@ -4,7 +4,7 @@ module.exports = function(app) {
   require('./api/station.js')(app);
 
   app.get('/init', function (req, res) {
-    var StationSchema = require('../models/station')
+    var StationSchema = require('./models/station')
     // test = new StationSchema({ name: 'Howden', code : 'HOW' },{ name: 'Kings Cross', code : 'KGX' });
     // test.save();
 
@@ -17,7 +17,7 @@ module.exports = function(app) {
       record.save();
     }
 
-    var JourneySchema = require('../models/journey')
+    var JourneySchema = require('./models/journey')
     test = new JourneySchema({
       stops: [
         { departure_time: Date.now(),
