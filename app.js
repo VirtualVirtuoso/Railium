@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const mongo = require('mongoose');
+const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/my_database');
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
