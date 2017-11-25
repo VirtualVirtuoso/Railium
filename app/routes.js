@@ -4,12 +4,46 @@ module.exports = function(app) {
 
   app.get('/init', function (req, res) {
     var StationSchema = require('../models/station')
-    test = new StationSchema({ name: 'Howden', code : 'HOW' });
+    // test = new StationSchema({ name: 'Howden', code : 'HOW' },{ name: 'Kings Cross', code : 'KGX' });
+    // test.save();
+
+    var init_stations = [
+      {name: 'Howden', code : 'HOW'},
+      {name: 'Kings Cross', code : 'KGX'},
+    ]
+    for (var i=0; i<init_stations.length; ++i) {
+      var record = new StationSchema(init_stations[i]);
+      record.save();
+    }
+
+    var JourneySchema = require('../models/journey')
+    test = new JourneySchema({
+      stops: [
+        { departure_time: Date.now(),
+          station: record,
+        }
+      ],
+      toilets: 'operational'
+    })
+
     test.save();
+
     callback = function(stuff, dave) {
       console.log(stuff, dave);
+      console.log(dave[0]['stops'][0]);
     }
-    StationSchema.find(callback);
+    //Example of how to do a nested query
+
+    JourneySchema.find(
+        {'stops':{"$elemMatch":{'departure_time':'2017-11-25T17:15:00.328Z'}}}
+        , callback);
+
+    // Example of how to find a customer's journeys
+    JourneySchema.find(
+        {'customer_number': 1}
+        , callback);
+
+    // StationSchema.find(callback);
     res.sendfile('./public/index.html'); // load home page
   });
 
