@@ -5,6 +5,9 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
   $scope.selectedDeparture = {};
   $scope.selectedArrival = {};
   $scope.selectedTime = null;
+  $scope.results = {};
+
+  $scope.faults = ['Toilets', 'Power Socket', 'Luggage Space', 'Bike Space', 'Disabled Access', 'Refreshments', 'WiFi', 'Sausage Rolls'];
 
   $scope.getDepartureStations = function() {
     Journey.getDepartureStations(function(res) {
@@ -38,5 +41,12 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
       console.log(res.data);
       $scope.times = res.data;
     });
+  }
+
+  $scope.collectResults = function() {
+    console.log($scope.results);
+    // Journey.sendResults($scope.results, function(res) {
+    //   console.log(res.data);
+    // });
   }
 }
