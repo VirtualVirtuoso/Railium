@@ -2,6 +2,8 @@ module.exports = function(app) {
   // include api files here
   require('./api/journey.js')(app);
   require('./api/station.js')(app);
+  require('./api/question.js')(app);
+  
   const Init = require('./helpers/init')
 
   app.get('/init', function (req, res) {
