@@ -28,7 +28,7 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
       // $scope.arrivalStations
     });
   }
-
+  let journey = {};
   $scope.getTimes = function() {
     console.log($scope.selectedArrival);
 
@@ -44,9 +44,10 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
   }
 
   $scope.collectResults = function() {
+    $scope.results.time = $scope.selectedTime;
     console.log($scope.results);
-    // Journey.sendResults($scope.results, function(res) {
-    //   console.log(res.data);
-    // });
+    Journey.sendResults($scope.results, function(res) {
+      console.log(res.data);
+    });
   }
 }

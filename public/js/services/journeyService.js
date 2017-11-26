@@ -18,7 +18,8 @@ const journeyService = function ($http) {
     },
 
     sendResults: function(params, success, error) {
-      return $http.get('/api/journey/' + endpoint, {params: params}).then(success, error);
+      console.log(params.time.id)
+      return $http.post('/api/question/' + params.time.id, {params: params}).then(success, error);
     }
   };
 };
