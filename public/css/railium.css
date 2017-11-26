@@ -13,6 +13,15 @@
     /*min-height: 32rem;*/
 }
 
+.main-btn {
+  background: #4286f4;
+}
+
+.main-btn:hover {
+  background: #4286f4;
+  border-radius: 20px;
+}
+
 .trainhandles {
     background-image: url('../img/trainhandles.jpg');
     background-repeat: no-repeat;
