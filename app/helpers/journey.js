@@ -7,7 +7,8 @@ function JourneyStats(journey) {
     this.stats = function() {
 
         this.response = {
-
+            'happiness_score': 0,
+            'happiness_ratio': 0,
         }
 
         if (this.journey == null) {
@@ -36,10 +37,21 @@ function JourneyStats(journey) {
                     console.log('toohot');
                     break;
 
+                case 'happiness':
+                    if (question['value'] == 'neutral') {
+                        // this.response['happiness_score'] = this.response['happiness_score'] + 0
+                    } else if (question['value'] == 'happy') {
+                        this.response['happiness_score'] = this.response['happiness_score'] + 5
+                    } else {
+                        this.response['happiness_score'] = this.response['happiness_score'] - 5
+                    }
+                    break;
+
             }
 
         }
 
+        this.response['happiness_ratio'] = this.response['happiness_score'] / this.response['happinesscount']
         return this.response
             console.log(this.response)
             console.log('hello')
