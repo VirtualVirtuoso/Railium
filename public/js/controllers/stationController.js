@@ -6,6 +6,7 @@ function stationController($scope, $location, $route, $routeParams, Station) {
   $scope.selectedArrival = {};
   $scope.selectedTime = null;
   $scope.results = {};
+  $scope.summary = {};
 
   $scope.faults = ['Toilets', 'Power Socket', 'Luggage Space', 'Bike Space', 'Disabled Access', 'Refreshments', 'WiFi', 'Sausage Rolls'];
 
@@ -28,6 +29,7 @@ function stationController($scope, $location, $route, $routeParams, Station) {
       // $scope.arrivalStations
     });
   }
+
   let journey = {};
   $scope.getTimes = function() {
     console.log($scope.selectedArrival);
@@ -47,7 +49,10 @@ function stationController($scope, $location, $route, $routeParams, Station) {
     $scope.results.time = $scope.selectedTime;
     console.log($scope.results);
     Station.sendResults($scope.results, function(res) {
+      $scope.summary = res.data;
       console.log(res.data);
+
+
     });
   }
 }

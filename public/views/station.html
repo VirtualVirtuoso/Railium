@@ -224,7 +224,7 @@
       <!-- Meta information -->
       <div class="row" id="summary-meta">
           <div class="col-sm-12">
-              <h1>Platform Name</h1>
+              <h1>{{selectedDeparture.name}} - {{selectedArrival.name}} {{selectedTime.departure_time | date: 'shortTime': 'UTC'}}</h1>
               <h2>Service Status - Last updated <span>12:31</span> by <span>Struboooo</span></h2>
           </div>
       </div>
@@ -233,7 +233,7 @@
       <div class="row" id="summary-info">
           <div class="col-sm-3">
               <div class="status-wrapper status-available">
-                  <span>Taxis</span>
+                  <span>Seating Availability</span>
               </div>
           </div>
           <div class="col-sm-3">
@@ -243,22 +243,32 @@
           </div>
           <div class="col-sm-3">
               <div class="status-wrapper status-limited">
-                  ATM
+                  WiFi
               </div>
           </div>
           <div class="col-sm-3">
               <div class="status-wrapper status-unavailable">
-                  Coffee Shops
+                  Baggage Space
               </div>
           </div>
-          <div class="col-sm-3" style="margin-left: 25%;">
+          <div class="col-sm-3">
               <div class="status-wrapper status-unavailable">
-                  Waiting Room
+                  Disability space
               </div>
           </div>
           <div class="col-sm-3">
               <div class="status-wrapper status-limited">
-                  Ticket Barriers
+                  Baggage Space
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-limited">
+                  Bike Space
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-limited">
+                  Refreshments Available
               </div>
           </div>
 
@@ -272,7 +282,6 @@
               </div>
           </div>
       </div>
-  </div>
 </div>
 <!-- Result Ends -->
 
