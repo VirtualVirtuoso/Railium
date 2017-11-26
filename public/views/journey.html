@@ -297,7 +297,7 @@
       <div class="row" id="summary-return">
           <div class="col-sm-12">
               <div class="submit-container">
-                  <button class="submit">Return</button>
+                  <button class="submit" onclick="goHome()">Return</button>
               </div>
           </div>
       </div>
@@ -320,5 +320,9 @@
 
     let result = document.getElementById('result');
     result.style.display = 'block';
+  }
+
+  function goHome() {
+    window.location = '/';
   }
 </script>
