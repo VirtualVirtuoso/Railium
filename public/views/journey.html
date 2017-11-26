@@ -12,21 +12,21 @@
         <fieldset>
           <div class="form-group">
               <label class="col-md-4 control-label" for="from-station">Station From</label>
-              <div class="col-md-4">
+              <div class="col-md-12 form-element">
                   <select name="departure-station" class="form-control" id="from-station" ng-options="departure.name for departure in departureStations" ng-model="selectedDeparture" ng-change="getArrivalStations()"></select>
               </div>
           </div>
 
           <div class="form-group">
               <label class="col-md-4 control-label" for="to-station">Station To</label>
-              <div class="col-md-4">
+              <div class="col-md-12 form-element">
                   <select name="arrival-station" id="to-station" class="form-control" ng-options="arrival.name for arrival in arrivalStations" ng-model="selectedArrival" ng-change="getTimes()"></select>
               </div>
           </div>
 
           <div class="form-group">
               <label class="col-md-4 control-label" for="depart-time">Departure Time</label>
-              <div class="col-md-4">
+              <div class="col-md-12 form-element">
                   <select name="time" id="depart-time" class="form-control" ng-options="(time.departure_time | date: 'shortTime': 'UTC' ) for time in times" ng-model="selectedTime"></select>
               </div>
           </div>
@@ -273,32 +273,39 @@
       <div class="row" id="summary-info">
           <div class="col-sm-3">
               <div class="status-wrapper status-available">
-                  <span>Taxis</span>
+                  <!-- <span>Taxis</span> -->
+                  <img class="selection-img" src="../img/svg/007-taxi.svg">
               </div>
+
           </div>
           <div class="col-sm-3">
               <div class="status-wrapper status-available">
-                  Toilets
+                  <!-- Toilets -->
+                  <img class="selection-img" src="../img/svg/Toilets.svg">
               </div>
           </div>
           <div class="col-sm-3">
               <div class="status-wrapper status-limited">
-                  ATM
+                  <!-- ATM -->
+                  <img class="selection-img" src="../img/svg/002-atm.svg">
               </div>
           </div>
           <div class="col-sm-3">
               <div class="status-wrapper status-unavailable">
-                  Coffee Shops
+                  <!-- Coffee Shops -->
+                  <img class="selection-img" src="../img/svg/Refreshments.svg">
               </div>
           </div>
           <div class="col-sm-3" style="margin-left: 25%;">
               <div class="status-wrapper status-unavailable">
-                  Waiting Room
+                  <!-- Waiting Room -->
+                  <img class="selection-img" src="../img/svg/001-waiting-room.svg">
               </div>
           </div>
           <div class="col-sm-3">
               <div class="status-wrapper status-limited">
-                  Ticket Barriers
+                  <!-- Ticket Barriers -->
+                  <img class="selection-img" src="../img/svg/barrier.svg">
               </div>
           </div>
 
