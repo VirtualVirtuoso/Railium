@@ -1,0 +1,42 @@
+h2{
+    text-align: center;
+}
+
+.status-wrapper{
+    background-color: #eeeeee;
+    border: 1px solid #777777;
+    padding: 50px 20px;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    min-height: 50px;
+}
+
+h2 > span {
+    font-weight: bold;
+}
+
+
+.status-unavailable{
+    background-color: #ff999b;
+}
+
+.status-available{
+    background-color: #4ee151;
+}
+
+.status-limited{
+    background-color: #fff886;
+}
+
+#summary-meta{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #777;
+    padding-bottom: 10px;
+}
+
+#summary-return{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
