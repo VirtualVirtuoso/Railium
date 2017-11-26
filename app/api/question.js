@@ -16,6 +16,8 @@ module.exports = function(app) {
 
         journey.crowd_answers.push({'qtype': 'toilets', 'value': 1},);
         journey.save();
+        const io = require('../helpers/socket')();
+        io.emit('fact', { for: 'everyone' });
       }
     });
 
