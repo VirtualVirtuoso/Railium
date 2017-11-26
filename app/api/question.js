@@ -12,13 +12,13 @@ module.exports = function(app) {
       else {
         console.log(req.params['journey']);
         res.send(journey);
-        if(! journey.hasOwnProperty('crowd_answers')){
-          console.log("No field");
-          journey.crowd_answers = [{'qtype': 'toilets', 'value': 1}];
-        }
-        else {
+        // if(! journey.hasOwnProperty('crowd_answers')){
+        //   console.log("No field");
+        //   journey.crowd_answers = [{'qtype': 'toilets', 'value': 1}];
+        // }
+        // else {
           journey.crowd_answers.push({'qtype': 'toilets', 'value': 1});
-        }
+        // }
         journey.save();
         const io = require('../helpers/socket')();
         io.sockets.emit('broadcast', { for: journey });
