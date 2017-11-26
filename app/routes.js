@@ -2,6 +2,8 @@ module.exports = function(app) {
   // include api files here
   require('./api/journey.js')(app);
   require('./api/station.js')(app);
+  require('./api/question.js')(app);
+
   const Init = require('./helpers/init')
 
   app.get('/init', function (req, res) {
@@ -15,9 +17,14 @@ module.exports = function(app) {
     res.send('dave');
   });
 
+  app.get('/customerfacts/', function (req, res) {
+    res.sendfile('./public/customer.html'); // load home page
+  });
+
   app.get('*', function (req, res) {
     res.sendfile('./public/index.html'); // load home page
   });
+
 
 
 };
