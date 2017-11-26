@@ -16,7 +16,8 @@ var journeyModelSchema = new Schema({
     // departure_time: Date,
     customer_number: {type: 'Number', default: '1'},
     stops: [stopModelSchema],
-    toilets: {type: 'String', enum: ['operational', 'broken']}
+    toilets: {type: 'String', enum: ['operational', 'broken']},
+    crowd_answers: [],
     }
 );
 

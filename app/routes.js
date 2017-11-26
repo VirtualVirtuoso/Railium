@@ -24,10 +24,17 @@ module.exports = function(app) {
 
 
     var JourneySchema = require('./models/journey')
-    test = new JourneySchema({
+    var test = new JourneySchema({
       stops: [
         {code: "HOW", departure_time: Date.now(),},
         {code: "KGX", departure_time: Date.now(),},
+      ],
+      crowd_answers: [
+        {'qtype': 'toilets', 'value': 1},
+        {'qtype': 'toilets', 'value': 1},
+        {'qtype': 'toilets', 'value': 1},
+        {'qtype': 'toohot', 'value': 'hot'},
+        {'qtype': 'toohot', 'value': 'hot'},
       ],
       toilets: 'operational'
     })
