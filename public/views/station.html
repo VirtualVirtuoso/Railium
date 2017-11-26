@@ -204,12 +204,19 @@
           </div>
       </div>
       <div class="submit-container">
-          <button class="submit">Share
+          <button class="submit" onclick="hideSurvey()" role="button">Share
           </button>
       </div>
   </div>
 </div>
 <!-- Survey ends -->
+
+<!-- Result Goes Here -->
+<div class="container" id="result">
+
+</div>
+<!-- Result Ends -->
+
 
 <script>
   function hideJourneyInput() {
@@ -218,5 +225,13 @@
 
     let survey = document.getElementById('survey');
     survey.style.display = 'block';
+  }
+
+  function hideSurvey() {
+    let survey = document.getElementById('survey');
+    survey.style.display = 'none';
+
+    let result = document.getElementById('result');
+    result.style.display = 'block';
   }
 </script>
