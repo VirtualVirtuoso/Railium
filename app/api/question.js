@@ -47,6 +47,22 @@ module.exports = function(app) {
         const io = require('../helpers/socket')();
         io.emit('fact', { for: 'everyone' });
         console.log(journey.crowd_answers);
+
+
+        setTimeout(function() {
+
+          Journeys.findOne({'_id': req.params['journey']}, function(err, journey) {
+            if (err) {
+              console.log(err);
+              res.status(500).end();
+            }
+            else {
+              jsh = new JourneyStatsHelper(journey)
+              res.send(jsh.stats());
+            }
+          });
+        }, 1000);
+
       }
     });
 
