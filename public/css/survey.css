@@ -56,6 +56,10 @@ h1 {
     min-height: 50px;
 }
 
+.control-label {
+  font-size: 40px;
+}
+
 .col-sm-3, .col-sm-4 {
     padding: 0;
 }
@@ -67,7 +71,7 @@ h1 {
 .submit{
     width: 800px;
     height: 100px;
-    background-color: darkcyan;
+    background-color: #4286f4;
     color: white;
     font-size: 40px;
     border: none;
