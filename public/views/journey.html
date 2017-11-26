@@ -56,23 +56,26 @@
                 </div>
                 <label class="col-sm-4">
                     <input class="surveyButton" type="radio" name="happiness" ng-model="results.happiness" value="unhappy">
-                      <div class="selection-box">
+                      <!-- <div class="selection-box">
                         Unhappy
-                      </div>
+                      </div> -->
+                      <img class="selection-img" src="../img/svg/009-sad.svg">
                     </input>
                 </label>
                 <label class="col-sm-4">
                   <input class="surveyButton" type="radio" name="happiness" ng-model="results.happiness" value="neutral">
-                    <div class="selection-box">
+                    <!-- <div class="selection-box">
                       Neutral
-                    </div>
+                    </div> -->
+                    <img class="selection-img" src="../img/svg/010-people.svg">
                   </input>
                 </label>
                 <label class="col-sm-4">
                   <input class="surveyButton" type="radio" name="happiness" ng-model="results.happiness" value="happy">
-                    <div class="selection-box">
+                    <!-- <div class="selection-box">
                       Happy
-                    </div>
+                    </div> -->
+                    <img class="selection-img" src="../img/svg/008-happy.svg">
                   </input>
                 </label>
                 <!-- <div class="col-sm-12"><h1>selected: {{ results.happiness }}</h1></div> -->
@@ -113,9 +116,10 @@
                   </div>
                   <label class="col-sm-3"ng-repeat="fault in faults">
                       <input class="surveyButton" type="checkbox" checklist-model="results.faults" checklist-value="fault">
-                        <div class="selection-box">
+                        <!-- <div class="selection-box">
                             {{fault}}
-                        </div>
+                        </div> -->
+                        <img class="selection-img" src="../img/svg/{{fault}}.svg">
                       </input>
                   </label>
                   <!-- <div class="col-sm-3">
@@ -183,23 +187,26 @@
                   </div>
                   <label class="col-sm-4">
                     <input class="surveyButton" type="radio" name="seats" ng-model="results.seats" value="plenty">
-                      <div class="selection-box">
+                      <!-- <div class="selection-box">
                           Plenty
-                      </div>
+                      </div> -->
+                      <img class="selection-img" src="../img/svg/001-user.svg">
                     </input>
                   </label>
                   <label class="col-sm-4">
                     <input class="surveyButton" type="radio" name="seats" ng-model="results.seats" value="few">
-                      <div class="selection-box">
+                      <!-- <div class="selection-box">
                           A Few
-                      </div>
+                      </div> -->
+                      <img class="selection-img" src="../img/svg/003-group.svg">
                     </input>
                   </label>
                   <label class="col-sm-4">
                     <input class="surveyButton" type="radio" name="seats" ng-model="results.seats" value="none">
-                      <div class="selection-box">
+                      <!-- <div class="selection-box">
                           None
-                      </div>
+                      </div> -->
+                      <img class="selection-img" src="../img/svg/004-waiting.svg">
                     </input>
                   </label>
                   <!-- <div class="col-sm-12"><h1>selected: {{ results.seats }}</h1></div> -->
@@ -212,23 +219,26 @@
                   </div>
                   <label class="col-sm-4">
                     <input type="radio" class="surveyButton" name="temperature" ng-model="results.temperature" value="freezing">
-                      <div class="selection-box">
+                      <!-- <div class="selection-box">
                           Freezing!
-                      </div>
+                      </div> -->
+                      <img class="selection-img" src="../img/svg/003-cold.svg">
                     </input>
                   </label>
                   <label class="col-sm-4">
                     <input type="radio" class="surveyButton" name="temperature" ng-model="results.temperature" value="neutral">
-                      <div class="selection-box">
+                      <!-- <div class="selection-box">
                           Neutral
-                      </div>
+                      </div> -->
+                      <img class="selection-img" src="../img/svg/005-ok.svg">
                     </input>
                   </label>
                   <label class="col-sm-4">
                     <input type="radio" class="surveyButton" name="temperature" ng-model="results.temperature" value="hot">
-                      <div class="selection-box">
+                      <!-- <div class="selection-box">
                           Too HOT!
-                      </div>
+                      </div> -->
+                      <img class="selection-img" src="../img/svg/001-thermometer.svg">
                     </input>
 
                   </label>
