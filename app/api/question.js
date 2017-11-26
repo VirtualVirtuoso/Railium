@@ -14,7 +14,7 @@ module.exports = function(app) {
         console.log(req.params['journey']);
         res.send(journey);
 
-        journey.crowd_answers.push({'qtype': 'toilets', 'value': 1},);
+        journey.crowd_answers.push({'qtype': 'toilets', 'value': 1});
         journey.save();
         const io = require('../helpers/socket')();
         io.emit('fact', { for: 'everyone' });
