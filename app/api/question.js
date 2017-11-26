@@ -5,6 +5,7 @@ module.exports = function(app) {
   // Return all journeys.
   app.post('/api/question/:journey', function(req, res) {
 
+    console.log(req['params']);
     console.log("Entered right URL");
     Journeys.findOne({'_id': req.params['journey']}, function(err, journey) {
       if (err) {
