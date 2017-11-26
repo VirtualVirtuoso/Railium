@@ -1,4 +1,4 @@
-const module = angular.module('railium', ['ngResource', 'ngRoute'])
+const module = angular.module('railium', ['ngResource', 'ngRoute', 'checklist-model'])
     .config(['$routeProvider', '$locationProvider', '$httpProvider', routeProvider])
 
     // Add factory declarations here.

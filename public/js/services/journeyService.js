@@ -16,5 +16,9 @@ const journeyService = function ($http) {
       let endpoint = params.departure + '/' + params.arrival;
       return $http.get('/api/journey/' + endpoint, {params: params}).then(success, error);
     },
+
+    sendResults: function(params, success, error) {
+      return $http.get('/api/journey/' + endpoint, {params: params}).then(success, error);
+    }
   };
 };
