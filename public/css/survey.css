@@ -25,6 +25,18 @@ body{
   border-top: 0;
   padding-bottom: 20px;
 }
+
+.status-wrapper {
+  border-radius: 10px;
+}
+
+/*.form-group {
+  width: 100%;
+}*/
+.form-control{
+  width: 100%;
+}
+
 .question-group{
     margin-top: 10px;
 }
