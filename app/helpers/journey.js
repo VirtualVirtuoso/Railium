@@ -9,6 +9,11 @@ function JourneyStats(journey) {
         this.response = {
 
         }
+
+        if (this.journey == null) {
+            return false;
+        }
+
         for(var i = 0; i < this.journey['crowd_answers'].length;i++){
             question = this.journey['crowd_answers'][i];
 

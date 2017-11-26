@@ -56,6 +56,57 @@ module.exports = function(app) {
   });
 
 
+  // Return a specific journey with stats
+  app.get('/api/journey/:departure_station/:arrival_station', function(req, res) {
+    var hash = req.params["hash"];
+
+    var departure_station = req.params['departure_station'];
+    var arrival_station = req.params['arrival_station'];
+
+    var journey_list = [];
+
+    Journeys.find(
+        {'stops': {"$elemMatch": {'code': departure_station}}}
+        , function (err, journeys) {
+          if (err) {
+            console.log(err);
+            res.status(500).end();
+          }
+          else {
+            for (var i = 0, len = journeys.length; i < len; i++) {
+              var journey = journeys[i];
+              var stops = journey['stops'];
+
+              for (var j = 0, len2 = stops.length; j < len2; j++) {
+                if (stops[j]['code'] == arrival_station) {
+                  journey_list.push(journeys[i]);
+                }
+              }
+            }
+
+            var response = [];
+            for (var i = 0, len = journey_list.length; i < len; i++) {
+              var journey = journey_list[i];
+              var stops = journey['stops'];
+
+              for (var j = 0, len2 = stops.length; j < len2; j++) {
+                if (stops[j]['code'] == departure_station) {
+                  response.push( {
+                    'departure_time': stops[j]['departure_time'],
+                    'id': journey['_id'],
+
+                  } );
+
+                }
+              }
+            }
+
+            res.send(response);
+            res.status(200).end();
+          }
+        });
+  });
+
   app.post('/api/journey', function(req, res) {
 
   });

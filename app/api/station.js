@@ -36,7 +36,7 @@ module.exports = function(app) {
         var station_array = [];
         for (var i = 0, len = journeys.length; i < len; i++) {
           var stops = journeys[i]['stops'];
-          for (var j = 0, len = stops.length; j < len; j++) {
+          for (var j = 0, len2 = stops.length; j < len2; j++) {
             console.log(stops[j]['code']);
             station_code_array.push(stops[j]['code']);
           }
@@ -57,6 +57,8 @@ module.exports = function(app) {
 
     // res.send(JSON.stringify(response));
   });
+
+
 
   app.post('/api/journey', function(req, res) {
 
