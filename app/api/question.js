@@ -12,7 +12,8 @@ module.exports = function(app) {
       else {
         console.log(req.params['journey']);
         res.send(journey);
-        if(journey.crowd_answers == null){
+        if(! journey.hasOwnProperty('crowd_answers')){
+          console.log("No field");
           journey.crowd_answers = [{'qtype': 'toilets', 'value': 1}];
         }
         else {
