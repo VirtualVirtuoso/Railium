@@ -8,15 +8,21 @@ function routeProvider($routeProvider, $locationProvider, $httpProvider) {
         controller: 'MainController'
       })
       .when('/journey', {
-        title: 'Railium',
-        templateUrl: 'views/train.html',
-        controller: 'MainController'
+        templateUrl: 'views/journey.html',
+        controller: 'JourneyController'
       })
       .when('/station', {
-        title: 'Railium',
-        templateUrl: 'views/journey.html',
-        controller: 'MainController'
+        templateUrl: 'views/station.html',
+        controller: 'StationController'
       });
+      // .when('/journey/survey', {
+      //   templateUrl: 'views/journeySurvey.html',
+      //   controller: 'JourneySurveyController'
+      // })
+      // .when('/station/survey', {
+      //   templateUrl: 'views/stationSurvey.html',
+      //   controller: 'StationSurveyController'
+      // });
 
     // Otherwise
     $routeProvider.otherwise({
