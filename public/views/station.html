@@ -210,12 +210,87 @@
           </div>
       </div>
       <div class="submit-container">
-          <button class="submit">Share
+          <button class="submit" onclick="hideSurvey()" role="button">Share
           </button>
       </div>
   </div>
 </div>
 <!-- Survey ends -->
+
+<!-- Result Goes Here -->
+<div class="container" id="result">
+  <div class="survey-image-wrapper"></div>
+
+  <div class="survey-wrapper">
+      <div class="container-fluid">
+      </div>
+  </div>
+  <div class="container-fluid">
+
+      <!-- Meta information -->
+      <div class="row" id="summary-meta">
+          <div class="col-sm-12">
+              <h1>{{selectedDeparture.name}} - {{selectedArrival.name}} {{selectedTime.departure_time | date: 'shortTime': 'UTC'}}</h1>
+              <h2>Service Status - Last updated <span>12:31</span> by <span>Struboooo</span></h2>
+          </div>
+      </div>
+
+      <!-- Results -->
+      <div class="row" id="summary-info">
+          <div class="col-sm-3">
+              <div class="status-wrapper status-available">
+                  <span>Seating Availability</span>
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-available">
+                  Toilets
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-limited">
+                  WiFi
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-unavailable">
+                  Baggage Space
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-unavailable">
+                  Disability space
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-limited">
+                  Baggage Space
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-limited">
+                  Bike Space
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="status-wrapper status-limited">
+                  Refreshments Available
+              </div>
+          </div>
+
+      </div>
+
+      <!-- Return -->
+      <div class="row" id="summary-return">
+          <div class="col-sm-12">
+              <div class="submit-container">
+                <button class="submit" onclick="goHome()">Return</button>
+              </div>
+          </div>
+      </div>
+</div>
+<!-- Result Ends -->
+
 
 <script>
   function hideJourneyInput() {
@@ -224,5 +299,17 @@
 
     let survey = document.getElementById('survey');
     survey.style.display = 'block';
+  }
+
+  function hideSurvey() {
+    let survey = document.getElementById('survey');
+    survey.style.display = 'none';
+
+    let result = document.getElementById('result');
+    result.style.display = 'block';
+  }
+
+  function goHome() {
+    window.location = '/';
   }
 </script>

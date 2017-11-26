@@ -16,6 +16,9 @@ h2 > span {
     font-weight: bold;
 }
 
+#result {
+  display: none;
+}
 
 .status-unavailable{
     background-color: #ff999b;

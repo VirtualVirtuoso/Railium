@@ -14,7 +14,12 @@ const stationService = function ($http) {
 
     getTimes: function(params, success, error) {
       let endpoint = params.departure + '/' + params.arrival;
-      return $http.get('/api/station/' + endpoint, {params: params}).then(success, error);
+      return $http.get('/api/journey/' + endpoint, {params: params}).then(success, error);
     },
+
+    sendResults: function(params, success, error) {
+      console.log(params.time.id)
+      return $http.post('/api/question/' + params.time.id, {params: params}).then(success, error);
+    }
   };
 };
