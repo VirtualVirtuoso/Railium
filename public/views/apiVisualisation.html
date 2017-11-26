@@ -1,0 +1,43 @@
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawSort);
+
+    function drawSort() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('number', 'Salary');
+        data.addColumn('boolean', 'Full Time');
+        data.addRows(5);
+        data.setCell(0, 0, 'John');
+        data.setCell(0, 1, 10000);
+        data.setCell(0, 2, true);
+        data.setCell(1, 0, 'Mary');
+        data.setCell(1, 1, 25000);
+        data.setCell(1, 2, true);
+        data.setCell(2, 0, 'Steve');
+        data.setCell(2, 1, 8000);
+        data.setCell(2, 2, false);
+        data.setCell(3, 0, 'Ellen');
+        data.setCell(3, 1, 20000);
+        data.setCell(3, 2, true);
+        data.setCell(4, 0, 'Mike');
+        data.setCell(4, 1, 12000);
+        data.setCell(4, 2, false);
+
+        var formatter = new google.visualization.NumberFormat({prefix: '$'});
+        formatter.format(data, 1); // Apply formatter to second column
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1]);
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_sort_div'));
+        chart.draw(view);
+    }
+  </script>
+</head>
+<body>
+  <!-- Identify where the chart should be drawn. -->
+  <div id="chart_sort_div"/>
+</body>
