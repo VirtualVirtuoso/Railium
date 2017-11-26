@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where are you?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="public/css/railium.css" rel="stylesheet">
+    <link href="public/css/where.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="header-image-wrapper">
+    </div>
+    <div class="form-wrapper">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1> Let's find your journey</h1>
+            </div>
+        </div>
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="from-station">Station From</label>
+                    <div class="col-md-4">
+                        <select id="from-station" name="from-station" class="form-control">
+                            <option value="0">Manchester Picadilly</option>
+                            <option value="1">Belle Vue</option>
+                            <option value="2">Aston Park</option>
+                            <option value="3">Brinnington</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="to-station">Station To</label>
+                    <div class="col-md-4">
+                        <select id="to-station" name="to-station" class="form-control">
+                            <option value="0">Marple</option>
+                            <option value="1">New Mills</option>
+                            <option value="2">Bredbury</option>
+                            <option value="3">Romiley</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="depart-time">Departure Time</label>
+                    <div class="col-md-4">
+                        <select id="depart-time" name="depart-time" class="form-control">
+                            <option value="0">09:00</option>
+                            <option value="1">09:15</option>
+                            <option value="2">09:30</option>
+                            <option value="3">09:45</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-12 control-label" for="btnCal"></label>
+                    <div class="col-md-12">
+                        <button id="btnCal" name="btnCal" class="submit">Save</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
