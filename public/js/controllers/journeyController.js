@@ -7,7 +7,7 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
   $scope.selectedTime = null;
   $scope.results = {};
 
-  $scope.faults = ['Toilets', 'Power Socket', 'Luggage Space', 'Bike Space', 'Disabled Access', 'Refreshments', 'WiFi', 'Sausage Rolls'];
+  $scope.faults = ['Toilets', 'Power', 'Luggage', 'Bike', 'Disabled', 'Refreshments', 'WiFi', 'Food'];
 
   $scope.getDepartureStations = function() {
     Journey.getDepartureStations(function(res) {

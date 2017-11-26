@@ -20,6 +20,11 @@ body{
     background-size: 100% 100%;
 }
 
+.survey-wrapper {
+  border: 1px solid black;
+  border-top: 0;
+  padding-bottom: 20px;
+}
 .question-group{
     margin-top: 10px;
 }
@@ -57,8 +62,9 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    margin-top: 10px;
+    margin-top: 20px;
     display: block;
+    border-radius: 10px;
 }
 
 .submit:hover{
@@ -69,6 +75,7 @@ h1 {
 .surveyButton {
   visibility: hidden;
   position: relative;
+  /*text-align: center;*/
 }
 
 .selection-box {
@@ -81,12 +88,22 @@ h1 {
   min-height: 50px;
 }
 
-.surveyButton + .selection-box {
-  cursor:pointer;
-  border:1px solid black;
+.selection-img {
+  width: 100px;
+  height: 100px;
+  /*text-align: center;*/
+  display: block;
+  margin: auto;
+  padding: 5px;
 }
 
-.surveyButton:checked + .selection-box {
-  border:1px solid red !important;
+.surveyButton + .selection-img {
+  cursor:pointer;
+  border:1px solid transparent;
+}
+
+.surveyButton:checked + .selection-img {
+  border:2px solid #4286f4 !important;
+  border-radius: 5px;
   display: block;
 }
