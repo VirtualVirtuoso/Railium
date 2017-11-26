@@ -18,6 +18,7 @@ module.exports = function(app) {
   });
 
   app.get('/customerfacts/', function (req, res) {
+    console.log("sending correct html");
     res.sendfile('./public/customer.html'); // load home page
   });
 

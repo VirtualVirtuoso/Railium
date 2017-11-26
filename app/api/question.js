@@ -4,8 +4,6 @@ const JourneyStatsHelper = require('../helpers/journey')
 module.exports = function(app) {
   // Return all journeys.
   app.post('/api/question/:journey', function(req, res) {
-
-    console.log("Entered right URL");
     Journeys.findOne({'_id': req.params['journey']}, function(err, journey) {
       if (err) {
         console.log(err);
@@ -22,8 +20,7 @@ module.exports = function(app) {
         }
         journey.save();
         const io = require('../helpers/socket')();
-        io.emit('fact', { for: 'everyone' });
-        console.log(journey.crowd_answers);
+        io.sockets.emit('broadcast', { for: 'everyone' });
       }
     });
 

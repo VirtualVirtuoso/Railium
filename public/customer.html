@@ -22,7 +22,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script>
         var socket = io();
-        socket.on('fact', function (data) {
+        console.log('Enters html u want');
+        socket.on('broadcast', function (data) {
             console.log(data);
             socket.emit('my other event', { my: 'data' });
         });
