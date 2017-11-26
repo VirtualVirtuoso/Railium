@@ -16,7 +16,6 @@ module.exports = function(app) {
     // console.log(req)
     console.log('in routes');
 
-    // res.send(JSON.stringify(response));
   });
 
   app.post('/api/journey', function(req, res) {

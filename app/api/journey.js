@@ -1,4 +1,5 @@
 const Journeys = require('../models/journey.js');
+const JourneyStatsHelper = require('../helpers/journey')
 
 module.exports = function(app) {
   // Return all journeys.
@@ -31,6 +32,24 @@ module.exports = function(app) {
       }
       else {
         res.send(journeys);
+      }
+    });
+    // console.log(req)
+  });
+
+
+  // Return a specific journey with stats
+  app.get('/api/journeystat/:hash', function(req, res) {
+    var hash = req.params["hash"];
+
+    Journeys.findOne({'_id': hash}, function(err, journey) {
+      if (err) {
+        console.log(err);
+        res.status(500).end();
+      }
+      else {
+        jsh = new JourneyStatsHelper(journey)
+        res.send(jsh.stats());
       }
     });
     // console.log(req)
