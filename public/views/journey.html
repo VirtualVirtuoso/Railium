@@ -1,0 +1,17 @@
+<div class="container" ng-init="getDepartureStations()">
+  <div classs="row">
+    <div class="col-md-10">
+      <form>
+        <span>Departing</span>
+        <select name="departure-station" ng-options="departure.name for departure in departureStations" ng-model="selectedDeparture" ng-change="getArrivalStations()"></select><br>
+        <span>Arriving</span>
+        <select name="arrival-station" ng-options="arrival.name for arrival in arrivalStations" ng-model="selectedArrival" ng-change="getTimes()"></select><br>
+        <span>Time</span>
+        <select name="time" ng-options="" ng-model="selectedTime">
+          <option ng-repeat="time in times" value="station">{{ time }}</option>
+        </select>
+        <p><a class="btn btn-lg btn-success" href="/journey/survey" ng-click="" role="button">GO!</a></p>
+      </form>
+    </div>
+  </div>
+</div>

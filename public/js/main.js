@@ -3,9 +3,13 @@ const module = angular.module('railium', ['ngResource', 'ngRoute'])
 
     // Add factory declarations here.
     .factory('Page', [pageService])
+    .factory('Journey', ['$http', journeyService])
+    .factory('Station', ['$http', stationService])
 
     // Add controller declarations here.
     .controller('MainController', ['$scope', 'Page', mainController])
+    .controller('JourneyController', ['$scope', '$location', '$route', '$routeParams', 'Journey', journeyController])
+    // .controller('StationController', ['$scope', '$location', '$route', '$routeParams', 'Station', stationController])
 
     // Add component declarations here.
     // .component('main', appComponent())
