@@ -33,6 +33,7 @@ module.exports = function(app) {
       }
       else {
         var station_code_array = [];
+        var station_array = [];
         for (var i = 0, len = journeys.length; i < len; i++) {
           var stops = journeys[i]['stops'];
           for (var j = 0, len = stops.length; j < len; j++) {
@@ -43,8 +44,12 @@ module.exports = function(app) {
         var un_station_code_array = station_code_array.filter(function(elem, pos) {
           return station_code_array.indexOf(elem) == pos;
         })
+        Stations.find({
+          'code': { $in: un_station_code_array}
+        }, function(err, stations){
+          res.send(stations)
+        });
 
-        res.send(un_station_code_array)
       }
     });
     // console.log(req)
