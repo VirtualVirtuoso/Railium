@@ -71,14 +71,22 @@ h1 {
   position: relative;
 }
 
+.selection-box {
+  /*background-color: #4286f4;*/
+  /*border: 1px solid #777777;*/
+  padding: 30px 20px;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  min-height: 50px;
+}
+
 .surveyButton + .selection-box {
   cursor:pointer;
   border:1px solid black;
 }
 
 .surveyButton:checked + .selection-box {
-  /*cursor:crosshair;*/
-
   border:1px solid red !important;
   display: block;
 }
