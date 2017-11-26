@@ -54,27 +54,27 @@
                 <div class="col-sm-12">
                     <h1>How happy are you?</h1>
                 </div>
-                <div class="col-sm-4">
-                    <input type="radio" name="happiness" ng-model="results.happiness" value="unhappy">
-                      <div class="choice-wrapper">
+                <label class="col-sm-4">
+                    <input class="surveyButton" type="radio" name="happiness" ng-model="results.happiness" value="unhappy">
+                      <div class="selection-box">
                         Unhappy
                       </div>
                     </input>
-                </div>
-                <div class="col-sm-4">
-                  <input type="radio" name="happiness" ng-model="results.happiness" value="neutral">
-                    <div class="choice-wrapper">
+                </label>
+                <label class="col-sm-4">
+                  <input class="surveyButton" type="radio" name="happiness" ng-model="results.happiness" value="neutral">
+                    <div class="selection-box">
                       Neutral
                     </div>
                   </input>
-                </div>
-                <div class="col-sm-4">
-                  <input type="radio" name="happiness" ng-model="results.happiness" value="happy">
-                    <div class="choice-wrapper">
+                </label>
+                <label class="col-sm-4">
+                  <input class="surveyButton" type="radio" name="happiness" ng-model="results.happiness" value="happy">
+                    <div class="selection-box">
                       Happy
                     </div>
                   </input>
-                </div>
+                </label>
                 <!-- <div class="col-sm-12"><h1>selected: {{ results.happiness }}</h1></div> -->
             </div>
         </form>
@@ -112,8 +112,8 @@
                       <h1>Which of the following are NOT available?</h1>
                   </div>
                   <label class="col-sm-3"ng-repeat="fault in faults">
-                      <input type="checkbox" checklist-model="results.faults" checklist-value="fault">
-                        <div class="choice-wrapper">
+                      <input class="surveyButton" type="checkbox" checklist-model="results.faults" checklist-value="fault">
+                        <div class="selection-box">
                             {{fault}}
                         </div>
                       </input>
@@ -181,27 +181,27 @@
                   <div class="col-sm-12">
                       <h1>Are there any free seats?</h1>
                   </div>
-                  <div class="col-sm-4">
-                    <input type="radio" name="seats" ng-model="results.seats" value="plenty">
-                      <div class="choice-wrapper">
+                  <label class="col-sm-4">
+                    <input class="surveyButton" type="radio" name="seats" ng-model="results.seats" value="plenty">
+                      <div class="selection-box">
                           Plenty
                       </div>
                     </input>
-                  </div>
-                  <div class="col-sm-4">
-                    <input type="radio" name="seats" ng-model="results.seats" value="few">
-                      <div class="choice-wrapper">
+                  </label>
+                  <label class="col-sm-4">
+                    <input class="surveyButton" type="radio" name="seats" ng-model="results.seats" value="few">
+                      <div class="selection-box">
                           A Few
                       </div>
                     </input>
-                  </div>
-                  <div class="col-sm-4">
-                    <input type="radio" name="seats" ng-model="results.seats" value="none">
-                      <div class="choice-wrapper">
+                  </label>
+                  <label class="col-sm-4">
+                    <input class="surveyButton" type="radio" name="seats" ng-model="results.seats" value="none">
+                      <div class="selection-box">
                           None
                       </div>
                     </input>
-                  </div>
+                  </label>
                   <!-- <div class="col-sm-12"><h1>selected: {{ results.seats }}</h1></div> -->
               </div>
           </div>
@@ -210,27 +210,28 @@
                   <div class="col-sm-12">
                       <h1>How does the train feel?</h1>
                   </div>
-                  <div class="col-sm-4">
+                  <label class="col-sm-4">
                     <input type="radio" class="surveyButton" name="temperature" ng-model="results.temperature" value="freezing">
                       <div class="selection-box">
                           Freezing!
                       </div>
                     </input>
-                  </div>
-                  <div class="col-sm-4">
+                  </label>
+                  <label class="col-sm-4">
                     <input type="radio" class="surveyButton" name="temperature" ng-model="results.temperature" value="neutral">
                       <div class="selection-box">
                           Neutral
                       </div>
                     </input>
-                  </div>
-                  <div class="col-sm-4">
+                  </label>
+                  <label class="col-sm-4">
                     <input type="radio" class="surveyButton" name="temperature" ng-model="results.temperature" value="hot">
                       <div class="selection-box">
                           Too HOT!
                       </div>
                     </input>
-                  </div>
+
+                  </label>
                   <!-- <div class="col-sm-12"><h1>selected: {{ results.temperature }}</h1></div> -->
               </div>
           </div>
