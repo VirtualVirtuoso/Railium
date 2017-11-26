@@ -21,7 +21,7 @@ module.exports = function(app) {
         }
         journey.save();
         const io = require('../helpers/socket')();
-        io.sockets.emit('broadcast', { for: 'everyone' });
+        io.sockets.emit('broadcast', { for: journey });
       }
     });
 

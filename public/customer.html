@@ -25,7 +25,7 @@
         console.log('Enters html u want');
         socket.on('broadcast', function (data) {
             console.log(data);
-            document.getElementById("body").innerHTML = data;
+            document.getElementById("body").innerHTML = data['for'].for;
             // Do smth with array
             socket.emit('my other event', { my: 'data' });
         });
