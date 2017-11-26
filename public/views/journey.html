@@ -1,17 +1,203 @@
-<div class="container" ng-init="getDepartureStations()">
-  <div classs="row">
-    <div class="col-md-10">
-      <form>
-        <span>Departing</span>
-        <select name="departure-station" ng-options="departure.name for departure in departureStations" ng-model="selectedDeparture" ng-change="getArrivalStations()"></select><br>
-        <span>Arriving</span>
-        <select name="arrival-station" ng-options="arrival.name for arrival in arrivalStations" ng-model="selectedArrival" ng-change="getTimes()"></select><br>
-        <span>Time</span>
-        <select name="time" ng-options="" ng-model="selectedTime">
-          <option ng-repeat="time in times" value="station">{{ time }}</option>
-        </select>
-        <p><a class="btn btn-lg btn-success" href="/journey/survey" ng-click="" role="button">GO!</a></p>
-      </form>
+<div class="container" ng-init="getDepartureStations()" id="input">
+  <div class="input-image-wrapper"></div>
+
+  <div class="form-wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1> Let's find your journey</h1>
+        </div>
     </div>
+
+    <form class="form-horizontal">
+        <fieldset>
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="from-station">Station From</label>
+              <div class="col-md-4">
+                  <select name="departure-station" class="form-control" id="from-station" ng-options="departure.name for departure in departureStations" ng-model="selectedDeparture" ng-change="getArrivalStations()"></select>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="to-station">Station To</label>
+              <div class="col-md-4">
+                  <select name="arrival-station" id="to-station" class="form-control" ng-options="arrival.name for arrival in arrivalStations" ng-model="selectedArrival" ng-change="getTimes()"></select>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="depart-time">Departure Time</label>
+              <div class="col-md-4">
+                  <select name="time" id="depart-time" class="form-control" ng-options="(time.departure_time | date: 'shortTime': 'UTC' ) for time in times" ng-model="selectedTime"></select>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="col-md-12 control-label" for="btnCal"></label>
+              <div class="col-md-12">
+                  <button name="btnCal" class="submit" id="btnCal" onclick=hideJourneyInput() role="button">GO!</button>
+              </div>
+          </div>
+
+        </fieldset>
+    </form>
   </div>
 </div>
+
+
+<div class="container" id="survey">
+  <div class="survey-image-wrapper"></div>
+
+  <div class="survey-wrapper">
+      <div class="container-fluid">
+          <div class="question-group">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h1>How happy are you?</h1>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Unhappy
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Normal
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Happy
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="question-group">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h1>Where are you on the train?</h1>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Front
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Middle
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Back
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="question-group">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h1>Which of the following are NOT available?</h1>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          Toilets
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          Power Socket
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          Luggage Space
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          Bike Space
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          Disabled Access
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          Refreshments
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          WiFi
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="choice-wrapper">
+                          Sausage Rolls
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="question-group">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h1>Are there any free seats?</h1>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Plenty
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          A few
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          None
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="question-group">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h1>How does the train feel?</h1>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Freezing!
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Normal
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="choice-wrapper">
+                          Too hot!
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="submit-container">
+          <button class="submit">Share
+          </button>
+      </div>
+  </div>
+</div>
+
+<script>
+  function hideJourneyInput() {
+    let input = document.getElementById('input');
+    input.style.display = 'none';
+
+    let survey = document.getElementById('survey');
+    survey.style.display = 'block';
+  }
+</script>
