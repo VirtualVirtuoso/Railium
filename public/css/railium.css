@@ -41,3 +41,12 @@ a.massive-button {
     min-height: 16rem;
     font-size: 48px;
 }
+
+.journeyInput {
+  padding: 20px;
+  widht: 100px;
+  height: 10rem;
+  /*text-align: center;*/
+
+  border: 1px solid black;
+}

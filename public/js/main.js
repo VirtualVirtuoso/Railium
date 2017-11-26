@@ -9,7 +9,7 @@ const module = angular.module('railium', ['ngResource', 'ngRoute'])
     // Add controller declarations here.
     .controller('MainController', ['$scope', 'Page', mainController])
     .controller('JourneyController', ['$scope', '$location', '$route', '$routeParams', 'Journey', journeyController])
-    // .controller('StationController', ['$scope', '$location', '$route', '$routeParams', 'Station', stationController])
+    .controller('StationController', ['$scope', '$location', '$route', '$routeParams', 'Station', stationController])
 
     // Add component declarations here.
     // .component('main', appComponent())

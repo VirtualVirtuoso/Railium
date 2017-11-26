@@ -14,7 +14,7 @@ const journeyService = function ($http) {
 
     getTimes: function(params, success, error) {
       let endpoint = params.departure + '/' + params.arrival;
-      return $http.get('/api/station/' + endpoint, {params: params}).then(success, error);
+      return $http.get('/api/journey/' + endpoint, {params: params}).then(success, error);
     },
   };
 };

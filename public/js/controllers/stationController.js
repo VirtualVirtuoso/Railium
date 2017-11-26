@@ -33,6 +33,7 @@ function stationController($scope, $location, $route, $routeParams, Station) {
 
     Station.getTimes(journey, function(res) {
       console.log(res.data);
+      $scope.times = res.data;
     });
   }
 }
