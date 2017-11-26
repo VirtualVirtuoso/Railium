@@ -5,7 +5,6 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
   $scope.selectedDeparture = {};
   $scope.selectedArrival = {};
   $scope.selectedTime = null;
-  console.log('aaaa')
 
   $scope.getDepartureStations = function() {
     Journey.getDepartureStations(function(res) {
@@ -28,6 +27,8 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
   }
 
   $scope.getTimes = function() {
+    console.log($scope.selectedArrival);
+
     let journey = {
       'departure': $scope.selectedDeparture.code,
       'arrival': $scope.selectedArrival.code
@@ -35,6 +36,7 @@ function journeyController($scope, $location, $route, $routeParams, Journey) {
 
     Journey.getTimes(journey, function(res) {
       console.log(res.data);
+      $scope.times = res.data;
     });
   }
 }
